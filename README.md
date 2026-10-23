@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python-to-Website AI Agent
 
 A beginner-friendly Streamlit app that accepts Python source, asks Groq to convert it into a Gradio or Streamlit app, and optionally uploads the generated files to Hugging Face Spaces.
@@ -35,3 +36,26 @@ Enter a unique Space name and tick the publish option. The app uploads the gener
 - Review generated source and dependencies before publishing. AI output may need debugging.
 - Hugging Face Space compute availability, pricing, account requirements, and build times can change. If publishing fails with a billing or hardware error, use an eligible Space configuration or another host.
 - A public URL does not guarantee the app is successfully running; check the Space build/runtime status.
+=======
+# Generated Python Website
+
+## Framework
+Streamlit
+
+## Generated website
+A simple Streamlit app that prompts the user for their name and displays a welcome message, mirroring the original console program.
+
+## Deploy on Render
+
+1. Create a GitHub repository.
+2. Upload app.py, requirements.txt, Dockerfile, and render.yaml.
+3. Open https://render.com and sign in.
+4. Select New +, then Blueprint, or create a Docker Web Service.
+5. Connect your GitHub repository and deploy.
+6. Open the public URL provided by Render.
+
+If using a Docker Web Service, choose the repository containing Dockerfile.
+The free plan has usage limitations, and services may sleep when inactive.
+
+Review the generated code before deploying it.
+>>>>>>> e9c476e2957bad74267200336e9f6a41ba8fb70a
