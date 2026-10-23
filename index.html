@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python to Website AI Agent</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+    }
+    header {
+      text-align: center;
+      padding: 45px 20px 25px;
+    }
+    header h1 { font-size: 34px; margin-bottom: 10px; }
+    header p { color: #cbd5e1; }
+    main {
+      max-width: 850px;
+      margin: 20px auto 60px;
+      padding: 28px;
+      background: #1e293b;
+      border-radius: 18px;
+      border: 1px solid #334155;
+    }
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      background: #0f172a;
+      color: white;
+      font-size: 15px;
+    }
+    textarea { min-height: 220px; resize: vertical; }
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border: 0;
+      border-radius: 9px;
+      background: #8b5cf6;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #7c3aed; }
+    #status {
+      margin-top: 20px;
+      color: #c4b5fd;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 Python to Website AI</h1>
+    <p>Transform your Python code into a web application.</p>
+  </header>
+
+  <main>
+    <h2>Create Your Website</h2>
+    <p>Enter your Python code and choose your preferred framework.</p>
+
+    <form id="generator">
+      <label for="framework">Website Framework</label>
+      <select id="framework">
+        <option value="Streamlit">Streamlit</option>
+        <option value="Gradio">Gradio</option>
+      </select>
+
+      <label for="pythonFile">Upload Python File</label>
+      <input id="pythonFile" type="file" accept=".py">
+
+      <label for="source">Or Paste Python Code</label>
+      <textarea id="source" placeholder="Paste your Python code here..."></textarea>
+
+      <button type="submit">✨ Generate Website</button>
+    </form>
+
+    <div id="status" role="status">
+      Ready! Upload a Python file or paste your code to begin.
+    </div>
+  </main>
+
+  <footer>Python to Website AI Agent · Built with ❤️</footer>
+
+  <script>
+    const form = document.getElementById("generator");
+    const fileInput = document.getElementById("pythonFile");
+    const sourceInput = document.getElementById("source");
+    const status = document.getElementById("status");
+
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files[0];
+      if (file) {
+        sourceInput.value = await file.text();
+      }
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!sourceInput.value.trim()) {
+        status.textContent = "Please upload a .py file or paste Python code.";
+        return;
+      }
+
+      status.textContent =
+        "Your code is ready. AI generation needs a connected backend. " +
+        "GitHub Pages cannot run Python or securely store your Groq API key.";
+    });
+  </script>
+</body>
+</html>
